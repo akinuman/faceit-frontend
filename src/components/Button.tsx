@@ -1,13 +1,16 @@
 import styled from 'styled-components';
-import theme from '../theme';
+import { IButton } from '../types/StyleTypes';
+import theme from './../theme';
 
-const Button = styled.button`
+const Button = styled('button')<IButton>`
   background: transparent;
   border: 1px solid ${theme.palette.secondary.main};
   border-radius: ${theme.borderRadius};
   color: ${theme.palette.primary.main};
   padding: ${theme.spacing(2)};
   ${theme.typography.button};
+  margin-left: ${props => `${props.leftMargin}px`};
+  margin-top: ${props => `${props.topMargin}px`};
 
   &:hover {
     border: 1px solid ${theme.palette.secondary.light};
