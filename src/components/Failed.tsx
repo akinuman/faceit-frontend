@@ -5,11 +5,18 @@ import { FailedContainer } from '../styles/HomeStyle';
 import P from './P';
 import Button from './Button';
 
-const Failed = () => {
+interface IProps {
+  filtered: string;
+  fetchTournaments: (filtered: string) => void;
+}
+
+const Failed = ({ fetchTournaments, filtered }: IProps) => {
   return (
     <FailedContainer>
       <P>Something went wrong.</P>
-      <Button topMargin={8}>Retry</Button>
+      <Button onClick={() => fetchTournaments(filtered)} topMargin={8}>
+        Retry
+      </Button>
     </FailedContainer>
   );
 };
