@@ -38,7 +38,11 @@ const App = () => {
     dispatch(getTournaments(filtered));
   };
   useEffect(() => {
-    fetchTournaments(filtered);
+    const delayDebounceFn = setTimeout(() => {
+      fetchTournaments(filtered);
+    }, 1000);
+
+    return () => clearTimeout(delayDebounceFn);
   }, [filtered]);
   const tournamentMap = () => {
     return (
