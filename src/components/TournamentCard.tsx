@@ -30,8 +30,8 @@ const TournamentCard = ({
         });
         if (response.data) fetchTournaments('');
         toast.success('You succesfully update name');
-      } catch (err) {
-        console.log(err);
+      } catch {
+        toast.warning('Something got wrong');
       }
   };
   const deleteTournament = async (id: string) => {
@@ -43,8 +43,8 @@ const TournamentCard = ({
         const response = await axios.delete(`${API_TOURNAMENTS_URL}/${id}`);
         if (response.data) fetchTournaments('');
         toast.success('You successfully delete data');
-      } catch (err) {
-        console.log(err);
+      } catch {
+        toast.warning('Something got wrong');
       }
   };
 
