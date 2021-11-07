@@ -40,9 +40,9 @@ const App = () => {
   useEffect(() => {
     const delayDebounceFn = setTimeout(() => {
       fetchTournaments(filtered);
-    }, 1000);
-
+    }, 700);
     return () => clearTimeout(delayDebounceFn);
+    //eslint-disable-next-line
   }, [filtered]);
   const tournamentMap = () => {
     return (

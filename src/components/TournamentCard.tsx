@@ -29,7 +29,6 @@ const TournamentCard = ({
           name: name
         });
         if (response.data) fetchTournaments('');
-        console.log(response);
         toast.success('You succesfully update name');
       } catch (err) {
         console.log(err);
@@ -43,7 +42,6 @@ const TournamentCard = ({
       try {
         const response = await axios.delete(`${API_TOURNAMENTS_URL}/${id}`);
         if (response.data) fetchTournaments('');
-        console.log(response);
         toast.success('You successfully delete data');
       } catch (err) {
         console.log(err);
