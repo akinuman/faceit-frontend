@@ -1,21 +1,16 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import { Provider } from 'react-redux';
-import GlobalStyle from './GlobalStyle';
 import store from './store';
-import Container from './components/Container';
-import H4 from './components/H4';
-
-const App: React.FC = () => {
-  return (
-    <Container>
-      <H4>FACEIT Tournaments</H4>
-    </Container>
-  );
-};
+//Style
+import GlobalStyle from './GlobalStyle';
+import App from './app';
+import { ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 ReactDOM.render(
   <Provider store={store}>
+    <ToastContainer />
     <GlobalStyle />
     <App />
   </Provider>,
